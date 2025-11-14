@@ -124,7 +124,7 @@ export function TechIcon({ name, level }: TechIconProps) {
   const iconColor = techColors[name];
 
   return (
-    <TooltipProvider delayDuration={200}>
+    <TooltipProvider delayDuration={150}>
       <Tooltip>
         <TooltipTrigger asChild>
           <div
@@ -132,20 +132,36 @@ export function TechIcon({ name, level }: TechIconProps) {
               w-12 h-12 flex items-center justify-center rounded-lg
               glass-card glass-hover cursor-pointer
               transition-all duration-300
+              hover:scale-110
+              hover:-translate-y-1
+              active:scale-95
+              group
+              relative
+              overflow-hidden
             "
           >
+            {/* Glow effect on hover */}
             <div
-              className="w-7 h-7"
+              className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-md"
+              style={iconColor ? { backgroundColor: iconColor } : undefined}
+            />
+
+            <div
+              className="w-7 h-7 relative z-10 transition-transform duration-300 group-hover:scale-110"
               style={iconColor ? { color: iconColor } : undefined}
             >
               <IconComponent className="w-full h-full" />
             </div>
           </div>
         </TooltipTrigger>
-        <TooltipContent side="top" className="font-medium">
+        <TooltipContent
+          side="top"
+          className="font-medium border-2 shadow-lg"
+          sideOffset={8}
+        >
           <div className="text-center">
-            <div>{name}</div>
-            <div className="text-xs text-muted-foreground mt-0.5">
+            <div className="font-bold text-foreground">{name}</div>
+            <div className="text-xs text-muted-foreground mt-1 font-medium">
               {levelLabels[level]}
             </div>
           </div>

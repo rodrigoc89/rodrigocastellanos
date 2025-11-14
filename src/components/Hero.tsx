@@ -29,15 +29,23 @@ export function Hero({ personalInfo }: HeroProps) {
       {/* Decorative background elements */}
       <div className="absolute inset-0 -z-10">
         <ParticlesBackground />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        {/* Pulse effects - visibles en ambos modos */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 dark:bg-primary/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_20px] shadow-primary/30 dark:shadow-[0_0_120px_30px] dark:shadow-primary/40" />
+        <div
+          className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 dark:bg-accent/25 rounded-full blur-3xl animate-pulse shadow-[0_0_120px_30px] shadow-accent/30 dark:shadow-[0_0_140px_40px] dark:shadow-accent/45"
+          style={{ animationDelay: '1s' }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-500/15 dark:bg-purple-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_110px_25px] shadow-purple-500/25 dark:shadow-[0_0_130px_35px] dark:shadow-purple-500/40"
+          style={{ animationDelay: '2s' }}
+        />
       </div>
 
       <div className="max-w-6xl w-full mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Avatar & Info */}
           <div className="shrink-0">
-            <Avatar className="w-48 h-48 md:w-64 md:h-64 border-4 border-primary shadow-2xl shadow-primary/20 ring-4 ring-primary/10 transition-transform hover:scale-105">
+            <Avatar className="w-48 h-48 md:w-64 md:h-64 border-4 border-primary shadow-xl shadow-primary/15 dark:shadow-2xl dark:shadow-primary/30 ring-4 ring-primary/8 dark:ring-primary/15 transition-transform hover:scale-105">
               <AvatarFallback className="text-6xl font-bold bg-linear-to-br from-primary to-accent text-primary-foreground">
                 {initials}
               </AvatarFallback>

@@ -6,7 +6,6 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import {
   GraduationCap,
   Award,
@@ -35,8 +34,10 @@ export function EducationSection({
     <section id="education" className="py-20 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
         <div className="space-y-4 mb-12">
-          <h2 className="text-4xl font-bold tracking-tight">Educación</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight gradient-text">
+            Educación
+          </h2>
+          <p className="text-xl text-foreground/80 dark:text-foreground/90">
             Mi formación académica y certificaciones profesionales
           </p>
         </div>
@@ -44,46 +45,64 @@ export function EducationSection({
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Education */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold flex items-center gap-2">
-              <GraduationCap className="w-6 h-6" />
+            <h3 className="text-2xl md:text-3xl font-bold flex items-center gap-3 text-foreground/90 dark:text-foreground">
+              <GraduationCap className="w-7 h-7 text-primary" />
               Formación Académica
             </h3>
 
             <div className="space-y-4">
               {education.map((edu) => (
-                <Card key={edu.id} className="glass-card glass-hover">
-                  <CardHeader>
-                    <CardTitle className="text-xl">{edu.degree}</CardTitle>
-                    <CardDescription className="text-base font-semibold text-foreground">
+                <Card
+                  key={edu.id}
+                  className="glass-card glass-hover group overflow-hidden relative"
+                >
+                  {/* Animated background */}
+                  <div className="absolute inset-0 bg-linear-to-br from-primary/0 via-primary/3 to-accent/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <CardHeader className="relative z-10">
+                    <CardTitle className="text-xl md:text-2xl font-bold group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300" />
+                      {edu.degree}
+                    </CardTitle>
+                    <CardDescription className="text-base font-bold text-foreground/90 dark:text-foreground">
                       {edu.institution}
                     </CardDescription>
-                    <div className="flex flex-col gap-2 text-sm text-muted-foreground pt-2">
-                      <span className="flex items-center gap-1">
+                    <div className="flex flex-col gap-2 text-sm text-foreground/70 dark:text-foreground/80 pt-2 font-medium">
+                      <span className="flex items-center gap-2 hover:text-primary transition-colors duration-300">
                         <MapPin className="w-4 h-4" />
                         {edu.location}
                       </span>
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-2 hover:text-primary transition-colors duration-300">
                         <Calendar className="w-4 h-4" />
                         {formatDate(edu.startDate)} - {formatDate(edu.endDate)}
                       </span>
                     </div>
                   </CardHeader>
 
-                  <CardContent className="space-y-3">
-                    <div>
-                      <span className="font-semibold">Campo: </span>
-                      <span className="text-muted-foreground">{edu.field}</span>
+                  <CardContent className="space-y-3 relative z-10">
+                    <div className="flex items-start gap-2">
+                      <span className="font-bold text-foreground/90 dark:text-foreground">
+                        Campo:
+                      </span>
+                      <span className="text-foreground/70 dark:text-foreground/80">
+                        {edu.field}
+                      </span>
                     </div>
                     {edu.grade && (
-                      <div>
-                        <span className="font-semibold">Promedio: </span>
-                        <span className="text-muted-foreground">
-                          {edu.grade}
+                      <div className="flex items-start gap-2">
+                        <span className="font-bold text-foreground/90 dark:text-foreground">
+                          Promedio:
                         </span>
+                        <Badge
+                          variant="secondary"
+                          className="hover:scale-105 transition-transform duration-300"
+                        >
+                          {edu.grade}
+                        </Badge>
                       </div>
                     )}
                     {edu.description && (
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-foreground/70 dark:text-foreground/80 text-sm leading-relaxed">
                         {edu.description}
                       </p>
                     )}
@@ -95,31 +114,46 @@ export function EducationSection({
 
           {/* Certifications */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold flex items-center gap-2">
-              <Award className="w-6 h-6" />
+            <h3 className="text-2xl md:text-3xl font-bold flex items-center gap-3 text-foreground/90 dark:text-foreground">
+              <Award className="w-7 h-7 text-accent" />
               Certificaciones
             </h3>
 
             <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <Card key={cert.id} className="glass-card glass-hover">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{cert.name}</CardTitle>
-                    <CardDescription className="font-semibold text-foreground">
+              {certifications.map((cert) => (
+                <Card
+                  key={cert.id}
+                  className="glass-card glass-hover group overflow-hidden relative"
+                >
+                  {/* Animated background */}
+                  <div className="absolute inset-0 bg-linear-to-br from-accent/0 via-accent/3 to-purple-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <CardHeader className="relative z-10">
+                    <CardTitle className="text-lg md:text-xl font-bold group-hover:text-accent transition-colors duration-300 flex items-center gap-2">
+                      <Award className="w-5 h-5 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+                      {cert.name}
+                    </CardTitle>
+                    <CardDescription className="font-bold text-foreground/90 dark:text-foreground flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                       {cert.issuer}
                     </CardDescription>
                   </CardHeader>
 
-                  <CardContent className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CardContent className="space-y-4 relative z-10">
+                    <div className="flex items-center gap-2 text-sm text-foreground/70 dark:text-foreground/80 font-medium hover:text-primary transition-colors duration-300">
                       <Calendar className="w-4 h-4" />
                       <span>{cert.date}</span>
                     </div>
 
                     {cert.credentialId && (
-                      <div className="text-sm">
-                        <span className="font-semibold">ID: </span>
-                        <Badge variant="outline" className="font-mono text-xs">
+                      <div className="text-sm flex items-center gap-2 flex-wrap">
+                        <span className="font-bold text-foreground/90 dark:text-foreground">
+                          ID:
+                        </span>
+                        <Badge
+                          variant="outline"
+                          className="font-mono text-xs hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                        >
                           {cert.credentialId}
                         </Badge>
                       </div>
@@ -130,7 +164,7 @@ export function EducationSection({
                         variant="outline"
                         size="sm"
                         asChild
-                        className="w-full"
+                        className="w-full hover:bg-accent/10 hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/20 transition-all duration-300 group/btn"
                       >
                         <a
                           href={cert.url}
@@ -138,16 +172,12 @@ export function EducationSection({
                           rel="noopener noreferrer"
                           className="flex items-center gap-2"
                         >
-                          <ExternalLink className="w-4 h-4" />
+                          <ExternalLink className="w-4 h-4 group-hover/btn:scale-110 transition-transform duration-300" />
                           Ver Certificado
                         </a>
                       </Button>
                     )}
                   </CardContent>
-
-                  {index < certifications.length - 1 && (
-                    <Separator className="mt-4" />
-                  )}
                 </Card>
               ))}
             </div>
