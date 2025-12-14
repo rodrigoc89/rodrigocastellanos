@@ -37,7 +37,7 @@ export function EducationSection({
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight gradient-text">
             Educación
           </h2>
-          <p className="text-xl text-foreground/80 dark:text-foreground/90">
+          <p className="text-xl text-foreground/85 dark:text-foreground/95">
             Mi formación académica y certificaciones profesionales
           </p>
         </div>
@@ -45,7 +45,7 @@ export function EducationSection({
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Education */}
           <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-bold flex items-center gap-3 text-foreground/90 dark:text-foreground">
+            <h3 className="text-2xl md:text-3xl font-bold flex items-center gap-3 text-foreground dark:text-foreground">
               <GraduationCap className="w-7 h-7 text-primary" />
               Formación Académica
             </h3>
@@ -64,10 +64,10 @@ export function EducationSection({
                       <span className="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300" />
                       {edu.degree}
                     </CardTitle>
-                    <CardDescription className="text-base font-bold text-foreground/90 dark:text-foreground">
+                    <CardDescription className="text-base font-bold text-foreground dark:text-foreground">
                       {edu.institution}
                     </CardDescription>
-                    <div className="flex flex-col gap-2 text-sm text-foreground/70 dark:text-foreground/80 pt-2 font-medium">
+                    <div className="flex flex-col gap-2 text-sm text-foreground/75 dark:text-foreground/85 pt-2 font-medium">
                       <span className="flex items-center gap-2 hover:text-primary transition-colors duration-300">
                         <MapPin className="w-4 h-4" />
                         {edu.location}
@@ -81,10 +81,10 @@ export function EducationSection({
 
                   <CardContent className="space-y-3 relative z-10">
                     <div className="flex items-start gap-2">
-                      <span className="font-bold text-foreground/90 dark:text-foreground">
+                      <span className="font-bold text-foreground dark:text-foreground">
                         Campo:
                       </span>
-                      <span className="text-foreground/70 dark:text-foreground/80">
+                      <span className="text-foreground/75 dark:text-foreground/85">
                         {edu.field}
                       </span>
                     </div>
@@ -102,7 +102,7 @@ export function EducationSection({
                       </div>
                     )}
                     {edu.description && (
-                      <p className="text-foreground/70 dark:text-foreground/80 text-sm leading-relaxed">
+                      <p className="text-foreground/75 dark:text-foreground/85 text-sm leading-relaxed">
                         {edu.description}
                       </p>
                     )}
@@ -114,7 +114,7 @@ export function EducationSection({
 
           {/* Certifications */}
           <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-bold flex items-center gap-3 text-foreground/90 dark:text-foreground">
+            <h3 className="text-2xl md:text-3xl font-bold flex items-center gap-3 text-foreground dark:text-foreground">
               <Award className="w-7 h-7 text-accent" />
               Certificaciones
             </h3>
@@ -126,28 +126,28 @@ export function EducationSection({
                   className="glass-card glass-hover group overflow-hidden relative"
                 >
                   {/* Animated background */}
-                  <div className="absolute inset-0 bg-linear-to-br from-accent/0 via-accent/3 to-purple-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-br from-accent/0 via-accent/5 to-primary/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <CardHeader className="relative z-10">
                     <CardTitle className="text-lg md:text-xl font-bold group-hover:text-accent transition-colors duration-300 flex items-center gap-2">
                       <Award className="w-5 h-5 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
                       {cert.name}
                     </CardTitle>
-                    <CardDescription className="font-bold text-foreground/90 dark:text-foreground flex items-center gap-2">
+                    <CardDescription className="font-bold text-foreground dark:text-foreground flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                       {cert.issuer}
                     </CardDescription>
                   </CardHeader>
 
                   <CardContent className="space-y-4 relative z-10">
-                    <div className="flex items-center gap-2 text-sm text-foreground/70 dark:text-foreground/80 font-medium hover:text-primary transition-colors duration-300">
+                    <div className="flex items-center gap-2 text-sm text-foreground/75 dark:text-foreground/85 font-medium hover:text-primary transition-colors duration-300">
                       <Calendar className="w-4 h-4" />
                       <span>{cert.date}</span>
                     </div>
 
                     {cert.credentialId && (
                       <div className="text-sm flex items-center gap-2 flex-wrap">
-                        <span className="font-bold text-foreground/90 dark:text-foreground">
+                        <span className="font-bold text-foreground dark:text-foreground">
                           ID:
                         </span>
                         <Badge

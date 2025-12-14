@@ -90,33 +90,33 @@ const levelLabels: Record<string, string> = {
   expert: 'Experto',
 };
 
-// Colores oficiales de cada tecnología
+// Colores optimizados para mejor contraste en modo claro
 const techColors: Record<string, string> = {
-  React: '#61DAFB',
-  TypeScript: '#3178C6',
-  JavaScript: '#F7DF1E',
-  HTML5: '#E34F26',
-  CSS3: '#1572B6',
-  'Tailwind CSS': '#06B6D4',
+  React: '#1fa2c9', // Oscurecido para mejor contraste
+  TypeScript: '#2968b3',
+  JavaScript: '#d4b900', // Oscurecido considerablemente
+  HTML5: '#d9431e',
+  CSS3: '#1166a3',
+  'Tailwind CSS': '#0891a8',
   'Next.js': '#000000',
-  'Vue.js': '#4FC08D',
-  'Node.js': '#339933',
+  'Vue.js': '#3a9e7a', // Oscurecido
+  'Node.js': '#2a7a2a',
   Express: '#000000',
-  NestJS: '#E0234E',
-  Python: '#3776AB',
-  FastAPI: '#009688',
+  NestJS: '#c01e41',
+  Python: '#2b6495',
+  FastAPI: '#007a6e',
   Django: '#092E20',
-  GraphQL: '#E10098',
-  PostgreSQL: '#4169E1',
-  MongoDB: '#47A248',
-  MySQL: '#4479A1',
-  Redis: '#DC382D',
-  Docker: '#2496ED',
-  Nginx: '#009639',
-  Git: '#F05032',
-  Postman: '#FF6C37',
-  Vite: '#646CFF',
-  Webpack: '#8DD6F9',
+  GraphQL: '#c71a7f', // Oscurecido
+  PostgreSQL: '#2f5bb8',
+  MongoDB: '#369a38',
+  MySQL: '#3a6a8d',
+  Redis: '#b52f25',
+  Docker: '#1a7dca',
+  Nginx: '#007a2f',
+  Git: '#d93d22',
+  Postman: '#e65424',
+  Vite: '#4f52d9', // Oscurecido
+  Webpack: '#62aad3', // Oscurecido
 };
 
 export function TechIcon({ name, level }: TechIconProps) {
@@ -147,7 +147,7 @@ export function TechIcon({ name, level }: TechIconProps) {
             />
 
             <div
-              className="w-7 h-7 relative z-10 transition-transform duration-300 group-hover:scale-110"
+              className="w-7 h-7 relative z-10 transition-transform duration-300 group-hover:scale-110 [filter:brightness(0.9)_saturate(1.1)] dark:[filter:brightness(1.1)_saturate(1.05)]"
               style={iconColor ? { color: iconColor } : undefined}
             >
               <IconComponent className="w-full h-full" />

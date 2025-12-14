@@ -34,7 +34,7 @@ export function About({ personalInfo, skills }: AboutProps) {
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight gradient-text">
               Sobre Mí
             </h2>
-            <p className="text-xl text-foreground/80 dark:text-foreground/90 max-w-3xl leading-relaxed">
+            <p className="text-xl text-foreground/85 dark:text-foreground/95 max-w-3xl leading-relaxed">
               {personalInfo.bio}
             </p>
           </div>
@@ -57,7 +57,7 @@ export function About({ personalInfo, skills }: AboutProps) {
                       className="space-y-4 p-4 rounded-lg hover:bg-accent/5 transition-colors duration-300"
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
-                      <h3 className="text-lg font-bold text-foreground/90 dark:text-foreground flex items-center gap-2">
+                      <h3 className="text-lg font-bold text-foreground dark:text-foreground flex items-center gap-2">
                         <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                         {categoryLabels[category] || category}
                       </h3>
@@ -84,7 +84,7 @@ export function About({ personalInfo, skills }: AboutProps) {
                 <div className="absolute inset-0 bg-linear-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <CardHeader className="relative z-10">
-                  <CardTitle className="text-lg font-bold text-foreground/90 dark:text-foreground flex items-center gap-2">
+                  <CardTitle className="text-lg font-bold text-foreground dark:text-foreground flex items-center gap-2">
                     <span className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300" />
                     Experiencia
                   </CardTitle>
@@ -93,7 +93,7 @@ export function About({ personalInfo, skills }: AboutProps) {
                   <p className="text-4xl md:text-5xl font-bold text-primary group-hover:scale-110 transition-transform duration-300 inline-block">
                     3+ años
                   </p>
-                  <p className="text-sm text-foreground/70 dark:text-foreground/80 mt-2 font-medium">
+                  <p className="text-sm text-foreground/75 dark:text-foreground/85 mt-2 font-medium">
                     Desarrollando aplicaciones web
                   </p>
                 </CardContent>
@@ -106,7 +106,7 @@ export function About({ personalInfo, skills }: AboutProps) {
                 <div className="absolute inset-0 bg-linear-to-br from-accent/0 via-accent/5 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <CardHeader className="relative z-10">
-                  <CardTitle className="text-lg font-bold text-foreground/90 dark:text-foreground flex items-center gap-2">
+                  <CardTitle className="text-lg font-bold text-foreground dark:text-foreground flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full group-hover:scale-150 transition-transform duration-300" />
                     Proyectos
                   </CardTitle>
@@ -115,7 +115,7 @@ export function About({ personalInfo, skills }: AboutProps) {
                   <p className="text-4xl md:text-5xl font-bold text-primary group-hover:scale-110 transition-transform duration-300 inline-block">
                     10+
                   </p>
-                  <p className="text-sm text-foreground/70 dark:text-foreground/80 mt-2 font-medium">
+                  <p className="text-sm text-foreground/75 dark:text-foreground/85 mt-2 font-medium">
                     Proyectos completados exitosamente
                   </p>
                 </CardContent>
@@ -125,11 +125,11 @@ export function About({ personalInfo, skills }: AboutProps) {
             <ScrollAnimate animation="fade-up" delay={4}>
               <Card className="glass-card glass-hover group cursor-default overflow-hidden relative">
                 {/* Animated background */}
-                <div className="absolute inset-0 bg-linear-to-br from-purple-500/0 via-purple-500/5 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-primary/0 via-primary/8 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <CardHeader className="relative z-10">
-                  <CardTitle className="text-lg font-bold text-foreground/90 dark:text-foreground flex items-center gap-2">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full group-hover:scale-150 transition-transform duration-300" />
+                  <CardTitle className="text-lg font-bold text-foreground dark:text-foreground flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full group-hover:scale-150 transition-transform duration-300" />
                     Clientes
                   </CardTitle>
                 </CardHeader>
@@ -137,7 +137,7 @@ export function About({ personalInfo, skills }: AboutProps) {
                   <p className="text-4xl md:text-5xl font-bold text-primary group-hover:scale-110 transition-transform duration-300 inline-block">
                     10+
                   </p>
-                  <p className="text-sm text-foreground/70 dark:text-foreground/80 mt-2 font-medium">
+                  <p className="text-sm text-foreground/75 dark:text-foreground/85 mt-2 font-medium">
                     Clientes satisfechos
                   </p>
                 </CardContent>

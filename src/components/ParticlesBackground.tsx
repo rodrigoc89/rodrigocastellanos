@@ -49,24 +49,24 @@ export function ParticlesBackground() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Reducir número de partículas para mejor rendimiento
+    // Partículas sutiles y elegantes
     const particles: Particle[] = [];
-    const particleCount = 40; // Reducido de 60 a 40
+    const particleCount = 30; // Reducido para look más limpio
 
     const logicalWidth = canvas.width / dpr;
     const logicalHeight = canvas.height / dpr;
 
     for (let i = 0; i < particleCount; i++) {
-      const baseSize = Math.random() * 2.5 + 1.5;
+      const baseSize = Math.random() * 1.5 + 0.8; // Más pequeñas
       particles.push({
         x: Math.random() * logicalWidth,
         y: Math.random() * logicalHeight,
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8,
+        vx: (Math.random() - 0.5) * 0.4, // Más lentas
+        vy: (Math.random() - 0.5) * 0.4,
         size: baseSize,
         baseSize: baseSize,
-        opacity: Math.random() * 0.4 + 0.4,
-        hue: Math.random() * 60 + 200,
+        opacity: Math.random() * 0.2 + 0.15, // Más transparentes
+        hue: Math.random() * 30 + 225, // Tonos azul navy
         pulsePhase: Math.random() * Math.PI * 2,
       });
     }
@@ -81,16 +81,16 @@ export function ParticlesBackground() {
       attributeFilter: ['class'],
     });
 
-    // Pre-calcular colores para evitar concatenación de strings en cada frame
+    // Colores sutiles y profesionales
     const getParticleColor = (hue: number, opacity: number) => {
-      const sat = isDark ? 80 : 85;
-      const light = isDark ? 65 : 45;
+      const sat = isDark ? 40 : 30; // Saturación reducida
+      const light = isDark ? 60 : 50;
       return `hsla(${hue}, ${sat}%, ${light}%, ${opacity})`;
     };
 
     const getShadowColor = (hue: number, opacity: number) => {
-      const light = isDark ? 70 : 50;
-      return `hsla(${hue}, 85%, ${light}%, ${opacity * (isDark ? 0.9 : 0.8)})`;
+      const light = isDark ? 65 : 55;
+      return `hsla(${hue}, 35%, ${light}%, ${opacity * (isDark ? 0.4 : 0.3)})`; // Glow más sutil
     };
 
     // Animation loop optimizado
@@ -147,13 +147,12 @@ export function ParticlesBackground() {
         }
       }
 
-      // Dibujar partículas con glow (batch de sombras similares)
+      // Dibujar partículas con glow sutil
       for (let i = 0; i < particles.length; i++) {
         const particle = particles[i];
 
-        ctx.shadowBlur = 15;
+        ctx.shadowBlur = 8; // Glow más sutil
         ctx.shadowColor = getShadowColor(particle.hue, particle.opacity);
-
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = getParticleColor(particle.hue, particle.opacity);
@@ -179,7 +178,7 @@ export function ParticlesBackground() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 pointer-events-none"
-      style={{ opacity: 0.7 }}
+      style={{ opacity: 0.4 }} // Más transparente para look profesional
     />
   );
 }

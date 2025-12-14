@@ -18,8 +18,10 @@ export function Contact({ personalInfo }: ContactProps) {
     <section id="contact" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="space-y-4 mb-12 text-center">
-          <h2 className="text-4xl font-bold tracking-tight">Contacto</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight gradient-text">
+            Contacto
+          </h2>
+          <p className="text-xl text-foreground/85 dark:text-foreground/95">
             ¿Tienes un proyecto en mente? ¡Hablemos!
           </p>
         </div>
@@ -37,27 +39,27 @@ export function Contact({ personalInfo }: ContactProps) {
             {/* Contact Info */}
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-4">
-                <h3 className="font-semibold text-lg">
+                <h3 className="font-bold text-lg text-foreground dark:text-foreground">
                   Información de Contacto
                 </h3>
 
                 <div className="space-y-3">
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                    className="flex items-center gap-3 text-foreground/75 dark:text-foreground/85 hover:text-primary transition-colors"
                   >
                     <Mail className="w-5 h-5" />
                     <span>{personalInfo.email}</span>
                   </a>
 
                   {personalInfo.phone && (
-                    <div className="flex items-center gap-3 text-muted-foreground">
+                    <div className="flex items-center gap-3 text-foreground/75 dark:text-foreground/85">
                       <MapPin className="w-5 h-5" />
                       <span>{personalInfo.phone}</span>
                     </div>
                   )}
 
-                  <div className="flex items-center gap-3 text-muted-foreground">
+                  <div className="flex items-center gap-3 text-foreground/75 dark:text-foreground/85">
                     <MapPin className="w-5 h-5" />
                     <span>{personalInfo.location}</span>
                   </div>
@@ -65,7 +67,9 @@ export function Contact({ personalInfo }: ContactProps) {
               </div>
 
               <div className="space-y-4">
-                <h3 className="font-semibold text-lg">Redes Sociales</h3>
+                <h3 className="font-bold text-lg text-foreground dark:text-foreground">
+                  Redes Sociales
+                </h3>
 
                 <div className="space-y-3">
                   {personalInfo.social.github && (
@@ -73,7 +77,7 @@ export function Contact({ personalInfo }: ContactProps) {
                       href={personalInfo.social.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                      className="flex items-center gap-3 text-foreground/75 dark:text-foreground/85 hover:text-primary transition-colors"
                     >
                       <Github className="w-5 h-5" />
                       <span>GitHub</span>
@@ -85,7 +89,7 @@ export function Contact({ personalInfo }: ContactProps) {
                       href={personalInfo.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                      className="flex items-center gap-3 text-foreground/75 dark:text-foreground/85 hover:text-primary transition-colors"
                     >
                       <Linkedin className="w-5 h-5" />
                       <span>LinkedIn</span>
@@ -97,7 +101,7 @@ export function Contact({ personalInfo }: ContactProps) {
                       href={personalInfo.social.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                      className="flex items-center gap-3 text-foreground/75 dark:text-foreground/85 hover:text-primary transition-colors"
                     >
                       <Globe className="w-5 h-5" />
                       <span>Sitio Web</span>

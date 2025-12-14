@@ -14,8 +14,10 @@ export function Footer({ personalInfo }: FooterProps) {
         <div className="grid md:grid-cols-3 gap-8">
           {/* About */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">{personalInfo.name}</h3>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="text-lg font-bold text-foreground dark:text-foreground">
+              {personalInfo.name}
+            </h3>
+            <p className="text-sm text-foreground/75 dark:text-foreground/85">
               {personalInfo.title} apasionado por crear experiencias web
               excepcionales.
             </p>
@@ -23,12 +25,14 @@ export function Footer({ personalInfo }: FooterProps) {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Enlaces Rápidos</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="text-lg font-bold text-foreground dark:text-foreground">
+              Enlaces Rápidos
+            </h3>
+            <ul className="space-y-2 text-sm text-foreground/75 dark:text-foreground/85">
               <li>
                 <a
                   href="#about"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Sobre Mí
                 </a>
@@ -36,7 +40,7 @@ export function Footer({ personalInfo }: FooterProps) {
               <li>
                 <a
                   href="#projects"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Proyectos
                 </a>
@@ -44,7 +48,7 @@ export function Footer({ personalInfo }: FooterProps) {
               <li>
                 <a
                   href="#experience"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Experiencia
                 </a>
@@ -52,7 +56,7 @@ export function Footer({ personalInfo }: FooterProps) {
               <li>
                 <a
                   href="#contact"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Contacto
                 </a>
@@ -62,14 +66,16 @@ export function Footer({ personalInfo }: FooterProps) {
 
           {/* Social */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Sígueme</h3>
+            <h3 className="text-lg font-bold text-foreground dark:text-foreground">
+              Sígueme
+            </h3>
             <div className="flex gap-4">
               {personalInfo.social.github && (
                 <a
                   href={personalInfo.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-foreground/75 dark:text-foreground/85 hover:text-primary transition-colors hover:scale-110 active:scale-95"
                   aria-label="GitHub"
                 >
                   <Github className="w-5 h-5" />
@@ -80,7 +86,7 @@ export function Footer({ personalInfo }: FooterProps) {
                   href={personalInfo.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-foreground/75 dark:text-foreground/85 hover:text-primary transition-colors hover:scale-110 active:scale-95"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -88,7 +94,7 @@ export function Footer({ personalInfo }: FooterProps) {
               )}
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-foreground/75 dark:text-foreground/85 hover:text-primary transition-colors hover:scale-110 active:scale-95"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -97,7 +103,7 @@ export function Footer({ personalInfo }: FooterProps) {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-8 border-t text-center text-sm text-foreground/70 dark:text-foreground/80">
           <p>
             © {currentYear} {personalInfo.name}. Todos los derechos reservados.
           </p>

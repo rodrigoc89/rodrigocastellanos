@@ -43,7 +43,7 @@ export function ExperienceSection({ experience }: ExperienceProps) {
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight gradient-text">
               Experiencia Laboral
             </h2>
-            <p className="text-xl text-foreground/80 dark:text-foreground/90">
+            <p className="text-xl text-foreground/85 dark:text-foreground/95">
               Mi trayectoria profesional en desarrollo web
             </p>
           </div>
@@ -73,11 +73,11 @@ export function ExperienceSection({ experience }: ExperienceProps) {
                           <Briefcase className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                           {exp.position}
                         </CardTitle>
-                        <CardDescription className="text-lg font-bold text-foreground/90 dark:text-foreground flex items-center gap-2">
+                        <CardDescription className="text-lg font-bold text-foreground dark:text-foreground flex items-center gap-2">
                           <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                           {exp.company}
                         </CardDescription>
-                        <div className="flex flex-wrap gap-4 text-sm text-foreground/70 dark:text-foreground/80 font-medium">
+                        <div className="flex flex-wrap gap-4 text-sm text-foreground/75 dark:text-foreground/85 font-medium">
                           <span className="flex items-center gap-2 hover:text-primary transition-colors duration-300">
                             <MapPin className="w-4 h-4" />
                             {exp.location}
@@ -93,7 +93,7 @@ export function ExperienceSection({ experience }: ExperienceProps) {
                   </CardHeader>
 
                   <CardContent className="space-y-6 relative z-10">
-                    <p className="text-foreground/80 dark:text-foreground/90 leading-relaxed">
+                    <p className="text-foreground/85 dark:text-foreground/95 leading-relaxed">
                       {exp.description}
                     </p>
 

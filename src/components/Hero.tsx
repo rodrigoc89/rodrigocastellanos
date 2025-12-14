@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Github, Linkedin, Mail, Globe } from 'lucide-react';
-import { ParticlesBackground } from '@/components/ParticlesBackground';
 import type { PersonalInfo } from '@/types/portfolio';
 
 interface HeroProps {
@@ -28,16 +27,11 @@ export function Hero({ personalInfo }: HeroProps) {
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 -z-10">
-        <ParticlesBackground />
-        {/* Pulse effects - visibles en ambos modos */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 dark:bg-primary/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_20px] shadow-primary/30 dark:shadow-[0_0_120px_30px] dark:shadow-primary/40" />
+        {/* Efectos sutiles profesionales con verde esmeralda */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 dark:bg-primary/15 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 dark:bg-accent/25 rounded-full blur-3xl animate-pulse shadow-[0_0_120px_30px] shadow-accent/30 dark:shadow-[0_0_140px_40px] dark:shadow-accent/45"
-          style={{ animationDelay: '1s' }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-500/15 dark:bg-purple-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_110px_25px] shadow-purple-500/25 dark:shadow-[0_0_130px_35px] dark:shadow-purple-500/40"
-          style={{ animationDelay: '2s' }}
+          className="absolute bottom-20 right-10 w-[28rem] h-[28rem] bg-accent/8 dark:bg-accent/12 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: '1.5s' }}
         />
       </div>
 
@@ -58,16 +52,16 @@ export function Hero({ personalInfo }: HeroProps) {
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight gradient-text">
                 {personalInfo.name}
               </h1>
-              <p className="text-2xl md:text-3xl text-muted-foreground font-medium">
+              <p className="text-2xl md:text-3xl text-foreground/70 dark:text-foreground/80 font-medium">
                 {personalInfo.title}
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-foreground/65 dark:text-foreground/75">
                 {personalInfo.nationality} • {personalInfo.age} años •{' '}
                 {personalInfo.location}
               </p>
             </div>
 
-            <p className="text-lg text-muted-foreground max-w-2xl">
+            <p className="text-lg text-foreground/75 dark:text-foreground/85 max-w-2xl">
               {personalInfo.bio}
             </p>
 
@@ -149,7 +143,7 @@ export function Hero({ personalInfo }: HeroProps) {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection('contact')}
-                className="font-semibold glass-card hover:border-primary transition-all"
+                className="font-semibold glass-card hover:border-primary transition-all "
               >
                 Contáctame
               </Button>

@@ -28,7 +28,7 @@ export function Projects({ projects }: ProjectsProps) {
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight gradient-text">
               Proyectos
             </h2>
-            <p className="text-xl text-foreground/80 dark:text-foreground/90">
+            <p className="text-xl text-foreground/85 dark:text-foreground/95">
               Algunos de mis trabajos recientes y proyectos destacados
             </p>
           </div>
@@ -38,8 +38,8 @@ export function Projects({ projects }: ProjectsProps) {
         {featuredProjects.length > 0 && (
           <div className="space-y-6 mb-12">
             <ScrollAnimate animation="fade-left" delay={1}>
-              <h3 className="text-2xl md:text-3xl font-bold flex items-center gap-3 text-foreground/90 dark:text-foreground">
-                <Star className="w-7 h-7 fill-yellow-500 text-yellow-500 animate-pulse" />
+              <h3 className="text-2xl md:text-3xl font-bold flex items-center gap-3 text-foreground dark:text-foreground">
+                <Star className="w-7 h-7 fill-accent text-accent" />
                 Proyectos Destacados
               </h3>
             </ScrollAnimate>
@@ -61,7 +61,7 @@ export function Projects({ projects }: ProjectsProps) {
         {otherProjects.length > 0 && (
           <div className="space-y-6">
             <ScrollAnimate animation="fade-left" delay={2}>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground/90 dark:text-foreground flex items-center gap-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground dark:text-foreground flex items-center gap-2">
                 <span className="w-2 h-8 bg-primary rounded-full" />
                 Otros Proyectos
               </h3>
@@ -101,7 +101,7 @@ function ProjectCard({ project, featured = false }: ProjectCardProps) {
       {/* Featured badge */}
       {featured && (
         <div className="absolute top-4 right-4 z-10">
-          <div className="bg-yellow-500 text-yellow-950 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
+          <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg shadow-primary/30">
             <Star className="w-3 h-3 fill-current" />
             Destacado
           </div>
@@ -122,7 +122,7 @@ function ProjectCard({ project, featured = false }: ProjectCardProps) {
           <span className="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300" />
           {project.title}
         </CardTitle>
-        <CardDescription className="text-foreground/70 dark:text-foreground/80 leading-relaxed">
+        <CardDescription className="text-foreground/75 dark:text-foreground/85 leading-relaxed">
           {featured
             ? project.longDescription || project.description
             : project.description}
@@ -131,7 +131,7 @@ function ProjectCard({ project, featured = false }: ProjectCardProps) {
 
       <CardContent className="space-y-4 relative z-10 flex-1">
         <div>
-          <h4 className="text-xs font-bold text-foreground/70 dark:text-foreground/80 uppercase tracking-wider mb-2">
+          <h4 className="text-xs font-bold text-foreground/80 dark:text-foreground/90 uppercase tracking-wider mb-2">
             Tecnologías
           </h4>
           <div className="flex flex-wrap gap-2">
